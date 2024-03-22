@@ -28,6 +28,11 @@ export enum Character {
     Equal = '=',
 }
 
+export const OperatorHTMLEntity = {
+    [Character.Multiple]: '&#215;',
+    [Character.Divide]: '&#247;',
+};
+
 export const DEFAULT_CALC: ICalc = {
     operator: Character.Empty,
     question: Character.Empty,

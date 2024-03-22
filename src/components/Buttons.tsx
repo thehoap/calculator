@@ -1,12 +1,12 @@
 import React from 'react';
 import { Character } from '@/constants/characters';
-import styled from 'styled-components';
+import CalculatorHelpers from '@/helpers/calculator';
 
 export interface Props {
     onInputCharacter: (character: string) => void;
 }
 
-const characters: string[] = [
+const characters: Character[] = [
     Character.ClearAll,
     Character.Clear,
     Character.Remainder,
@@ -39,38 +39,23 @@ const Buttons = ({ onInputCharacter }: Props) => {
     };
 
     return (
-        <StyledButtons>
-            {characters.map((character) => (
-                <div
+        <div className='flex justify-center items-center flex-wrap gap-3'>
+            {characters.map((character: Character) => (
+                <button
+                    className='flex justify-center items-center 
+                                w-[80px] h-[80px] 
+                                text-[24px] text-white bg-[#252b38] 
+                                rounded-[16px] 
+                                cursor-pointer select-none'
                     key={character}
                     onClick={() => onClickButton(character)}
-                    dangerouslySetInnerHTML={{ __html: character }}
-                ></div>
+                    dangerouslySetInnerHTML={{
+                        __html: CalculatorHelpers.renderOperator(character),
+                    }}
+                />
             ))}
-        </StyledButtons>
+        </div>
     );
 };
-
-const StyledButtons = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-
-    & div {
-        width: 80px;
-        height: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-        font-size: 20px;
-        color: #fff;
-        background-color: #252b38;
-        cursor: pointer;
-        user-select: none;
-    }
-`;
 
 export default Buttons;

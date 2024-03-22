@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import Buttons from './Buttons';
 import Screen from './Screen';
 import CalculatorHelpers from '@/helpers/calculator';
@@ -39,18 +38,12 @@ const Calculator = () => {
     };
 
     return (
-        <StyledCalculator>
-            <Header></Header>
+        <div className='w-[375px] h-[600px] border border-black'>
+            <Header />
             <Screen calc={calc} />
             <Buttons onInputCharacter={handleInputCharacter} />
-        </StyledCalculator>
+        </div>
     );
 };
-
-export const StyledCalculator = styled.div`
-    width: 375px;
-    height: 600px;
-    border: 1px solid black;
-`;
 
 export default Calculator;

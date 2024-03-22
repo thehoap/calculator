@@ -5,13 +5,17 @@ const Header = () => {
     const [isLight, setIsLight] = useState<boolean>(true);
 
     return (
-        <StyledHeader>
+        <StyledHeader className='flex justify-between items-center'>
             <p>
                 Calculator by <a href='https://github.com/thehoap'>thehoap</a>
             </p>
             <div>
                 <input type='checkbox' name='toggle-input-pricing' id='toggle-input-pricing' checked={isLight} />
-                <StyledLabel htmlFor='toggle-input-pricing' onClick={() => setIsLight((prev) => !prev)}>
+                <label
+                    className='flex items-center w-[75px] h-[25px] p-[2px] border border-black rounded-[20px]'
+                    htmlFor='toggle-input-pricing'
+                    onClick={() => setIsLight((prev) => !prev)}
+                >
                     {isLight ? (
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
@@ -43,17 +47,13 @@ const Header = () => {
                             />
                         </svg>
                     )}
-                </StyledLabel>
+                </label>
             </div>
         </StyledHeader>
     );
 };
 
-const StyledHeader = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+const StyledHeader = styled.header`
     & svg {
         display: inline-block;
         width: 25px;
@@ -61,16 +61,6 @@ const StyledHeader = styled.div`
         border: 1px solid black;
         border-radius: 50%;
     }
-`;
-
-const StyledLabel = styled.label`
-    display: flex;
-    align-items: center;
-    width: 75px;
-    height: 25px;
-    padding: 2px;
-    border: 1px solid black;
-    border-radius: 20px;
 `;
 
 export default Header;

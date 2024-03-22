@@ -1,5 +1,5 @@
 import { ICalc } from '@/components//Calculator';
-import { Character, DEFAULT_CALC } from '@/constants/characters';
+import { Character, DEFAULT_CALC, OperatorHTMLEntity } from '@/constants/characters';
 import MathHelpers from './math';
 
 export const RESULT_MAX_LENGTH = 11;
@@ -199,11 +199,20 @@ const detechKeyOnPress = (key: string): Character => {
     return Character.Empty;
 };
 
+const renderOperator = (operator: Character): string => {
+    if (operator === Character.Multiple || operator === Character.Divide) {
+        return OperatorHTMLEntity[operator];
+    }
+
+    return operator;
+};
+
 const CalculatorHelpers = {
     getCalcValue,
     detechKeyOnPress,
     getFirstNumberAndOperator,
     hasDot,
+    renderOperator,
 };
 
 export default CalculatorHelpers;
