@@ -1,4 +1,3 @@
-import React from 'react';
 import { Character, characters } from '@/constants/characters';
 import CalculatorHelpers from '@/helpers/calculator';
 import StringUtils from '@/helpers/string';
