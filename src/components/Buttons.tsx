@@ -1,37 +1,10 @@
 import React from 'react';
-import { Character } from '@/constants/characters';
+import { Character, characters } from '@/constants/characters';
 import CalculatorHelpers from '@/helpers/calculator';
 
 export interface Props {
     onInputCharacter: (character: string) => void;
 }
-
-const characters: Character[] = [
-    Character.ClearAll,
-    Character.Clear,
-    Character.Remainder,
-    Character.Divide,
-
-    Character.Seven,
-    Character.Eight,
-    Character.Nine,
-    Character.Multiple,
-
-    Character.Four,
-    Character.Five,
-    Character.Six,
-    Character.Minus,
-
-    Character.One,
-    Character.Two,
-    Character.Three,
-    Character.Plus,
-
-    Character.Zero,
-    Character.Dot,
-    Character.Thousand,
-    Character.Equal,
-];
 
 const Buttons = ({ onInputCharacter }: Props) => {
     const onClickButton = (character: string): void => {
@@ -44,7 +17,7 @@ const Buttons = ({ onInputCharacter }: Props) => {
                 <button
                     className='flex justify-center items-center 
                                 w-[80px] h-[80px] 
-                                text-[24px] text-white bg-[#252b38] 
+                                text-[24px] text-white bg-[#252b38] dark:bg-[#f36536] 
                                 rounded-[16px] 
                                 cursor-pointer select-none'
                     key={character}

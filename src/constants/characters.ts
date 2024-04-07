@@ -38,3 +38,30 @@ export const DEFAULT_CALC: ICalc = {
     question: Character.Empty,
     result: '0',
 };
+
+export const characters: Character[] = [
+    Character.ClearAll,
+    Character.Clear,
+    Character.Remainder,
+    Character.Divide,
+
+    Character.Seven,
+    Character.Eight,
+    Character.Nine,
+    Character.Multiple,
+
+    Character.Four,
+    Character.Five,
+    Character.Six,
+    Character.Minus,
+
+    Character.One,
+    Character.Two,
+    Character.Three,
+    Character.Plus,
+
+    Character.Zero,
+    Character.Dot,
+    Character.Thousand,
+    Character.Equal,
+];
