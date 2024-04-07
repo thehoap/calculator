@@ -4,6 +4,7 @@ import Screen from './Screen';
 import CalculatorHelpers from '@/helpers/calculator';
 import { Character, DEFAULT_CALC } from '@/constants/characters';
 import Header from './Header';
+import StringUtils from '@/helpers/string';
 
 export interface ICalc {
     operator:
@@ -38,7 +39,15 @@ const Calculator = () => {
     };
 
     return (
-        <div className='w-[375px] h-[600px] border border-black'>
+        <div
+            className={StringUtils.classNames(
+                'flex flex-col gap-4',
+                'w-[340px] h-[560px]',
+                'bg-lightPrimary dark:bg-darkPrimary',
+                'pt-[8px] px-[20px] rounded-2xl',
+                'select-none',
+            )}
+        >
             <Header />
             <Screen calc={calc} />
             <Buttons onInputCharacter={handleInputCharacter} />

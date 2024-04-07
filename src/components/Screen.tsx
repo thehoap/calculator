@@ -2,6 +2,7 @@ import React from 'react';
 import { ICalc } from './Calculator';
 import CalculatorHelpers, { RESULT_MAX_LENGTH } from '@/helpers/calculator';
 import { Character } from '@/constants/characters';
+import StringUtils from '@/helpers/string';
 
 interface Props {
     calc: ICalc;
@@ -33,13 +34,28 @@ const Screen = ({ calc }: Props) => {
     const { firstNumber, operator } = CalculatorHelpers.getFirstNumberAndOperator(question);
 
     return (
-        <div className='h-[100px] pr-[40px] text-[40px]'>
-            <div className='flex justify-end items-center h-[50px] text-[20px]'>
+        <div
+            className={StringUtils.classNames(
+                'flex flex-col justify-between',
+                'h-[100px]',
+                'bg-[#f5f0eb] dark:bg-[#4B473E]',
+                'py-[4px] pr-[20px] border-[4px] border-darkPrimary dark:border-lightPrimary rounded-xl',
+                'text-[40px] text-darkPrimary dark:text-lightPrimary',
+            )}
+        >
+            <div
+                className={StringUtils.classNames(
+                    'flex justify-end items-center',
+                    'h-[40px]',
+                    'text-[16px]',
+                    'opacity-40',
+                )}
+            >
                 {question && (
                     <>
                         {addCommasToNumber(String(firstNumber))}
                         <span
-                            className='inline-block w-[20px] mx-[8px] my-0 '
+                            className={StringUtils.classNames('inline-block', 'w-[20px]', 'mx-[8px] my-0')}
                             dangerouslySetInnerHTML={{
                                 __html: CalculatorHelpers.renderOperator(operator),
                             }}
@@ -47,7 +63,7 @@ const Screen = ({ calc }: Props) => {
                     </>
                 )}
             </div>
-            <div className='h-[50px] mt-auto text-right text-[40px]'>{renderResult(result)}</div>
+            <div className={StringUtils.classNames('h-[60px]', 'text-right text-[28px]')}>{renderResult(result)}</div>
         </div>
     );
 };
