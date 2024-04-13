@@ -13,8 +13,11 @@ export default {
             orange: '#de983c',
             lightOrange: '#e6af6c',
 
+            blue: '#17487C',
+            lightBlue: '#40679E',
+
             sun: '#f79900',
-            moon: '#6b66ff',
+            moon: '#40679E',
         },
     },
     plugins: [],

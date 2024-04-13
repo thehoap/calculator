@@ -15,7 +15,7 @@ const Header = () => {
     const svgClassName = StringUtils.classNames('absolute top-[2px]', 'w-4 h-4', 'bg-[#fff]', 'rounded-full');
 
     return (
-        <header className='flex justify-between items-center'>
+        <header className='flex justify-between items-center mb-2'>
             <h1 className={StringUtils.classNames('text-sun dark:text-moon', 'text-[20px] font-extrabold uppercase')}>
                 Calculator
             </h1>

@@ -14,18 +14,18 @@ const Buttons = ({ onInputCharacter }: Props) => {
 
     const getButtonColors = (character: Character): string => {
         if (MathHelpers.isOperator(character)) {
-            return 'border-orange text-lightPrimary dark:text-[#494542] bg-lightOrange';
+            return 'border-orange dark:border-[#074173] text-lightPrimary bg-lightOrange dark:bg-moon';
         }
 
         if (character === Character.Clear || character === Character.ClearAll) {
-            return 'border-red text-lightPrimary dark:text-[#494542] bg-lightRed';
+            return 'border-red text-lightPrimary bg-lightRed';
         }
 
         if (character === Character.Equal) {
-            return 'border-[#8a8294] text-lightPrimary dark:text-[#494542] bg-[#a49dab]';
+            return 'border-[#8a8294] text-lightPrimary bg-[#a49dab]';
         }
 
-        return 'border-[#e3d9ca] dark:border-[#B4AFAB] text-red dark:text-lightRed bg-[#f5f0eb] dark:bg-[#4B473E]';
+        return 'border-[#e3d9ca] dark:border-[#B4AFAB] text-red dark:text-lightPrimary bg-[#f5f0eb] dark:bg-[#4B473E]';
     };
 
     return (

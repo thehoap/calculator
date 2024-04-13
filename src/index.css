@@ -31,11 +31,10 @@ body {
 
 @layer components {
     .undo-redo {
-        @apply relative
-      flex justify-between items-center
-      w-[40px] h-[24px]
-      bg-lightRed stroke-lightPrimary dark:stroke-darkPrimary
-      p-[2px] border-[2px] border-red rounded-[4px]
-      cursor-pointer;
+        @apply relative flex justify-between items-center w-[40px] h-[24px] bg-lightRed stroke-lightPrimary p-[2px] border-[2px] border-red rounded-[4px] cursor-pointer;
+    }
+
+    .disabled {
+        @apply opacity-60 cursor-not-allowed;
     }
 }
