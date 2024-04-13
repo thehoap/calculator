@@ -37,7 +37,7 @@ const Screen = ({ calc }: Props) => {
         <div
             className={StringUtils.classNames(
                 'flex flex-col justify-between',
-                'h-[100px]',
+                'h-[88px]',
                 'bg-[#f5f0eb] dark:bg-[#4B473E]',
                 'py-[4px] pr-[20px] border-[4px] border-darkPrimary dark:border-lightPrimary rounded-xl',
                 'text-[40px] text-darkPrimary dark:text-lightPrimary',
